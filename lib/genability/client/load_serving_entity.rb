@@ -97,6 +97,7 @@ module Genability
       def lses_params(options)
         {
           'accountId' => options[:account_id],
+          'customerClasses' => multi_option_handler(options[:customer_classes]),
           'zipCode' => options[:zip_code]
         }.delete_if{ |k,v| v.nil? }.
           merge( pagination_params(options) ).
